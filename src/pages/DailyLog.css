@@ -1,0 +1,125 @@
+/* src/pages/DailyLog.css */
+
+.dailylog-container {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff6f9;
+  min-height: 100vh;
+}
+
+.dailylog-title {
+  text-align: center;
+  color: #e91e63;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.dailylog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-4px);
+}
+
+.day-card h3 {
+  text-align: center;
+  color: #b83c7a;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.activity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  gap: 1rem;
+}
+
+.activity-row span {
+  flex: 1;
+  color: #444;
+  word-break: break-word;
+}
+
+.activity-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button.miss-btn {
+  background-color: #f44336;
+}
+
+button.miss-btn:hover {
+  background-color: #d32f2f;
+}
+
+.success-msg {
+  color: green;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.day-complete {
+  margin-top: 12px;
+  background-color: #e0ffe0;
+  border-radius: 8px;
+  padding: 0.7rem;
+  color: #2e7d32;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #ff66a3;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.back-button:hover {
+  background-color: #e91e63;
+}

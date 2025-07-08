@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.help-container {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #fce7f3, #e0f2fe);
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.back-btn:hover {
+  background-color: #c0256d;
+}
+
+/* Header */
+.hero-section {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Cards */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.support-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-card p {
+  color: #555;
+  margin-top: 5px;
+}
+
+.chatbot-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #ff69b4;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-btn:hover {
+  background-color: #ff85c1;
+}
+
+/* Info Box */
+.info-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 50px auto 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.info-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d63384;
+  margin-bottom: 10px;
+}
+
+.info-desc {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.info-phone,
+.info-hours {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Optional Chatbot Container (if used on other pages) */
+.chatbot-container {
+  margin: 50px auto;
+  max-width: 700px;
+  background-color: #ffeef4;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.chatbot-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d63384;
+  margin-bottom: 10px;
+  text-align: center;
+}
