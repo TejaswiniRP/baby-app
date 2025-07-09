@@ -123,3 +123,7 @@ button.miss-btn:hover {
 .back-button:hover {
   background-color: #e91e63;
 }
+.miss-msg {
+  color: #ff4d4d;
+  font-weight: bold;
+}

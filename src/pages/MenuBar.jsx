@@ -44,25 +44,28 @@ function Menubar() {
       image: "https://storage.googleapis.com/a1aa/image/26d28efa-04a9-4a4a-f0e9-c9ebc8e85e20.jpg",
     },
   ];
+const handleNavigation = (title) => {
+  if (title === "Help & Support") {
+    navigate("/help-support");
+  } else if (title === "Settings") {
+    navigate("/settings");
+  } else if (title === "Nutrition Chart") {
+    navigate("/babydetails");
+  } else if (title === "Do’s & Don’ts") {
+    navigate("/do-and-dont");
+  } else if (title === "Rhyme Time") {
+    navigate("/rhyme-time");
+  } else if (title === "Daily Log - Streaks") {
+    navigate("/daily-log");
+  } else if (title === "Memories of Your Baby") {
+    navigate("/memories");
+  } else if (title === "Feed, Diaper, Sleep") {
+    navigate("/feed-track");
+  } else {
+    alert(`Clicked: ${title}`);
+  }
+};
 
-  const handleNavigation = (title) => {
-    if (title === "Help & Support") {
-      navigate("/help-support");
-    } else if (title === "Settings") {
-      navigate("/settings");
-    } else if (title === "Nutrition Chart") {
-      navigate("/babydetails");
-    } else if (title === "Do’s & Don’ts") {
-      navigate("/do-and-dont");
-    } else if (title === "Rhyme Time") {
-      navigate("/rhyme-time");
-    } else if(title ==="Daily Log - Streaks"){
-      navigate("/daily-log");
-    }
-      else {
-      alert(`Clicked: ${title}`);
-    }
-  };
 
   return (
     <div className={styles.page}>

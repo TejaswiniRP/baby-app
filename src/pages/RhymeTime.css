@@ -23,11 +23,26 @@
 }
 
 /* Grid Layout */
+/* Default: 3 columns */
 .rhyme-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   justify-items: center;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .rhyme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .rhyme-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Individual Rhyme Card */

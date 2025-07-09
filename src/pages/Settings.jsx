@@ -1,67 +1,82 @@
 // src/pages/Settings.jsx
-import React, { useState } from "react";
-import "./settings.css";
+import React, { useState, useEffect } from "react";
+import "./Settings.css";
 import { useNavigate } from "react-router-dom";
 
-function Settings() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [notifications, setNotifications] = useState(true);
-  const [language, setLanguage] = useState("English");
-
+const Settings = () => {
   const navigate = useNavigate();
 
-  const handleSave = () => {
-    alert("Settings Saved Successfully!");
-    navigate("/menu");
-  };
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   return (
-    <div className={`settings-container ${darkMode ? "dark" : ""}`}>
+    <div className="settings-container">
+      <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
+      <h1 className="settings-title">⚙️ Settings</h1>
+
       <div className="settings-card">
-        <h1 className="settings-title">Settings</h1>
-
         <div className="setting-item">
-          <label htmlFor="darkModeToggle">Dark Mode</label>
-          <input
-            type="checkbox"
-            id="darkModeToggle"
-            checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
-          />
+          <span>🌗 Dark Mode</span>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={darkMode}
+              onChange={() => setDarkMode(!darkMode)}
+            />
+            <span className="slider"></span>
+          </label>
         </div>
 
         <div className="setting-item">
-          <label htmlFor="notificationsToggle">Notifications</label>
-          <input
-            type="checkbox"
-            id="notificationsToggle"
-            checked={notifications}
-            onChange={() => setNotifications(!notifications)}
-          />
+          <span>🔔 Notifications</span>
+          <label className="switch">
+            <input type="checkbox" checked disabled />
+            <span className="slider"></span>
+          </label>
+          <p className="setting-note">(Enabled by default)</p>
         </div>
 
         <div className="setting-item">
-          <label htmlFor="languageSelect">App Language</label>
-          <select
-            id="languageSelect"
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+          <span>👤 Account Info</span>
+          <button className="action-btn">Edit</button>
+        </div>
+
+        <div className="setting-item">
+          <span>🔒 Change Password</span>
+          <button className="action-btn">Change</button>
+        </div>
+
+        <div className="setting-item">
+          <span>📱 App Version</span>
+          <span className="static-info">v1.0.0</span>
+        </div>
+
+        <div className="setting-item">
+          <span>🚪 Log Out</span>
+          <button
+            className="logout-btn"
+            onClick={() => {
+              localStorage.clear();
+              navigate("/login");
+            }}
           >
-            <option>English</option>
-            <option>Hindi</option>
-            <option>Tamil</option>
-            <option>Telugu</option>
-          </select>
-        </div>
-
-        <div className="setting-item">
-          <button className="save-button" onClick={handleSave}>
-            Save Changes
+            Log Out
           </button>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Settings;

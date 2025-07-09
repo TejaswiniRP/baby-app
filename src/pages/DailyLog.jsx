@@ -1,5 +1,4 @@
-// src/pages/DailyLog.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './DailyLog.css';
 
@@ -38,12 +37,36 @@ const dailyActivities = {
 };
 
 const DailyLog = () => {
-  const [activityStatus, setActivityStatus] = useState({});
   const navigate = useNavigate();
+  const [activityStatus, setActivityStatus] = useState({});
+  const currentMonth = new Date().toISOString().slice(0, 7); // format: YYYY-MM
+
+  // Load or reset data on first render
+  useEffect(() => {
+    const savedStatus = JSON.parse(localStorage.getItem('dailyActivityStatus')) || {};
+    const savedMonth = localStorage.getItem('dailyLogMonth');
+
+    if (savedMonth === currentMonth) {
+      setActivityStatus(savedStatus);
+    } else {
+      // Clear old month data
+      localStorage.removeItem('dailyActivityStatus');
+      localStorage.setItem('dailyLogMonth', currentMonth);
+      setActivityStatus({});
+    }
+  }, [currentMonth]);
+
+  // Save updated activity status to localStorage
+  useEffect(() => {
+    localStorage.setItem('dailyActivityStatus', JSON.stringify(activityStatus));
+  }, [activityStatus]);
 
   const handleStatusChange = (day, index, status) => {
     const key = `day${day}-activity${index}`;
-    setActivityStatus(prev => ({ ...prev, [key]: status }));
+    setActivityStatus((prev) => ({
+      ...prev,
+      [key]: status,
+    }));
   };
 
   const isDayComplete = (day) =>
@@ -64,6 +87,8 @@ const DailyLog = () => {
                   <span>{activity}</span>
                   {activityStatus[key] === 'done' ? (
                     <span className="success-msg">✔ Done</span>
+                  ) : activityStatus[key] === 'missed' ? (
+                    <span className="miss-msg">✘ Missed</span>
                   ) : (
                     <div className="activity-buttons">
                       <button onClick={() => handleStatusChange(day, i, 'done')}>Done</button>

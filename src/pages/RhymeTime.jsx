@@ -1,19 +1,49 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Required for navigation
+import { useNavigate } from "react-router-dom";
 import "./RhymeTime.css";
 
 const rhymes = [
   {
-    title: "Twinkle Twinkle",
-    video: "./videos/rhyme.mp4",
+    title: "amma sayithadu",
+    video: "./videos/rhyme2.mp4",
     lyrics: `Twinkle, twinkle, little star,\nHow I wonder what you are!`,
   },
-  // Add more rhymes here...
   {
-    title: "  bommi bommi",
-    video: " ./videos/rhyme2.mp4"
+    title: "bommi bommi",
+    video: "./videos/rhyme3.mp4"
+  },
+  {
+    title: "brinjal",
+    video: "./videos/rhyme4.mp4"
+  },
+  {
+    title: " brinjal",
+    video: "./videos/rhyme5.mp4"
+  },
+  {
+    title: "bommi 2",
+    video: "./videos/rhyme6.mp4"
+  },
+  {
+    title: "bommi 3",
+    video: "./videos/rhyme7.mp4"
+  },
+  {
+    title: "bommi 4",
+    video: "./videos/rhyme8.mp4"
+  },
+  {
+    title: "bommi 5",
+    video: "./videos/rhyme9.mp4"
+  },
+  {
+    title: "bommi 6",
+    video: "./videos/rhyme10.mp4"
   }
+  
 ];
+
+
 
 function RhymeCard({ title, video, lyrics }) {
   const [showLyrics, setShowLyrics] = useState(false);

@@ -12,7 +12,9 @@ import Settings from "./pages/Settings";
 import NutritionPage from "./pages/NutritionPage";
 import DoAndDont from "./pages/DoAndDont";
 import RhymeTime from './pages/RhymeTime';
-import DailyLog from './pages/DailyLog'; // ✅ New import
+import DailyLog from './pages/DailyLog';
+import Memories from './pages/Memories';
+import FeedTrack from "./pages/FeedTrack";
 
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
         <Route path="/nutrition" element={<NutritionPage />} />
         <Route path="/do-and-dont" element={<DoAndDont />} />
         <Route path="/rhyme-time" element={<RhymeTime />} />
-        <Route path="/daily-log" element={<DailyLog />} /> {/* ✅ New route */}
+        <Route path="/daily-log" element={<DailyLog />} />
+        <Route path="/memories" element={<Memories />} />
+        <Route path="/feed-track" element={<FeedTrack ageInMonths={6} />} />
 
         {/* Support + Utility Pages */}
         <Route path="/help-support" element={<HelpSupport />} />

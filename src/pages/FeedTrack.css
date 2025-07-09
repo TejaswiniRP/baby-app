@@ -1,0 +1,137 @@
+.feedtrack-container {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff6f9;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ff4081;
+  margin-top: 1rem;
+}
+
+.age-input {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+}
+
+.age-input input {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 70px;
+  text-align: center;
+}
+
+.warning {
+  color: red;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .card-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.care-card {
+  background: #ffe9f0;
+  border: 1px solid #ffcce0;
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 16px rgba(255, 102, 160, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.care-card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 1.4rem;
+  color: #ff3e7f;
+  margin-bottom: 0.6rem;
+}
+
+.card-age-tip,
+.card-suggestion,
+.card-interval,
+.last-log {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.log-button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff66a3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.log-button:hover {
+  background-color: #ff408c;
+}
+
+.log-history {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.log-history h3 {
+  margin-bottom: 1rem;
+  color: #b83c7a;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ff66a3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(255, 102, 160, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ff408c;
+}
