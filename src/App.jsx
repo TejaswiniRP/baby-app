@@ -15,6 +15,7 @@ import RhymeTime from './pages/RhymeTime';
 import DailyLog from './pages/DailyLog';
 import Memories from './pages/Memories';
 import FeedTrack from "./pages/FeedTrack";
+import CryAnalyzer from './pages/CryAnalyzer'; // ✅ NEW IMPORT
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
         <Route path="/help-support" element={<HelpSupport />} />
         <Route path="/chatbot" element={<ChatbotPage />} />
         <Route path="/settings" element={<Settings />} />
+
+        {/* ✅ NEW ROUTE */}
+        <Route path="/cry-analyzer" element={<CryAnalyzer />} />
       </Routes>
     </Router>
   );

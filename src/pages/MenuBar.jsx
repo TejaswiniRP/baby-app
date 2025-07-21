@@ -36,6 +36,10 @@ function Menubar() {
       image: "https://storage.googleapis.com/a1aa/image/25ae8120-3d2f-4b20-507a-ae8d01a44e48.jpg",
     },
     {
+      title: "Cry Analyzer",
+      image: "https://cdn-icons-png.flaticon.com/512/3081/3081559.png",
+    },
+    {
       title: "Settings",
       image: "https://storage.googleapis.com/a1aa/image/6934ea4b-a3f4-48b4-e093-a3d9f5281347.jpg",
     },
@@ -44,28 +48,30 @@ function Menubar() {
       image: "https://storage.googleapis.com/a1aa/image/26d28efa-04a9-4a4a-f0e9-c9ebc8e85e20.jpg",
     },
   ];
-const handleNavigation = (title) => {
-  if (title === "Help & Support") {
-    navigate("/help-support");
-  } else if (title === "Settings") {
-    navigate("/settings");
-  } else if (title === "Nutrition Chart") {
-    navigate("/babydetails");
-  } else if (title === "Do’s & Don’ts") {
-    navigate("/do-and-dont");
-  } else if (title === "Rhyme Time") {
-    navigate("/rhyme-time");
-  } else if (title === "Daily Log - Streaks") {
-    navigate("/daily-log");
-  } else if (title === "Memories of Your Baby") {
-    navigate("/memories");
-  } else if (title === "Feed, Diaper, Sleep") {
-    navigate("/feed-track");
-  } else {
-    alert(`Clicked: ${title}`);
-  }
-};
 
+  const handleNavigation = (title) => {
+    if (title === "Help & Support") {
+      navigate("/help-support");
+    } else if (title === "Settings") {
+      navigate("/settings");
+    } else if (title === "Nutrition Chart") {
+      navigate("/babydetails");
+    } else if (title === "Do’s & Don’ts") {
+      navigate("/do-and-dont");
+    } else if (title === "Rhyme Time") {
+      navigate("/rhyme-time");
+    } else if (title === "Daily Log - Streaks") {
+      navigate("/daily-log");
+    } else if (title === "Memories of Your Baby") {
+      navigate("/memories");
+    } else if (title === "Feed, Diaper, Sleep") {
+      navigate("/feed-track");
+    } else if (title === "Cry Analyzer") {
+      navigate("/cry-analyzer");
+    } else {
+      alert(`Clicked: ${title}`);
+    }
+  };
 
   return (
     <div className={styles.page}>
@@ -87,10 +93,17 @@ const handleNavigation = (title) => {
                   ))}
                 </div>
               ) : (
-                <img src={item.image} alt={item.title} className={styles.cardImage} />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.cardImage}
+                />
               )}
 
-              <button className={styles.button} onClick={() => handleNavigation(item.title)}>
+              <button
+                className={styles.button}
+                onClick={() => handleNavigation(item.title)}
+              >
                 Click Here
               </button>
             </div>
